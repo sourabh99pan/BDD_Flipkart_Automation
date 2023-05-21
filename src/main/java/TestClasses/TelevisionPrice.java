@@ -104,9 +104,7 @@ public class TelevisionPrice extends TestBase
 	      ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
 	      //switch to new tab
 	      driver.switchTo().window(newTb.get(1));
-		
-	      
-	      
+
 		System.out.println(telepage.priceipad.getText().replaceAll("₹", ""));
 		
 		
