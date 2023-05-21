@@ -78,7 +78,7 @@ public class TestBase {
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			System.out.println(System.getProperty("user.dir"));
-		    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+		    System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		    //driver = new ChromeDriver();
 		   ChromeOptions options = new ChromeOptions();
 		    options.addArguments("--remote-allow-origins=*");
@@ -91,7 +91,7 @@ public class TestBase {
 		}
 		else
 		{
-	        System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
+	        System.setProperty("webdriver.edge.driver", "Drivers/msedgedriver.exe");
 	        WebDriver driver = new EdgeDriver();
 		    driver.manage().window().maximize();
 		    configReader();
