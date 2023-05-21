@@ -85,8 +85,10 @@ public class TestBase {
 			WebDriverManager.chromedriver().setup();
 		   ChromeOptions options = new ChromeOptions();
 		    options.addArguments("--remote-allow-origins=*");
-		    driver = new ChromeDriver(options);
+		    options.addArguments("--no-sandbox");
+		    options.addArguments("--disable-dev-shm-usage");
 		    options.addArguments("--headless");
+		    driver = new ChromeDriver(options);
 		    driver.manage().window().maximize();
 		    driver.manage().timeouts().implicitlyWait(java.time.Duration.ofMillis(1000));
 		    System.out.println("i am in TestBase");
