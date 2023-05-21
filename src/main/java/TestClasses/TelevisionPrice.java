@@ -250,4 +250,36 @@ public class TelevisionPrice extends TestBase
 			test.log(LogStatus.FAIL, "Add to cart button is not displayed");
 		}
 	}
+	
+	@Test(groups= {"regression"})
+	public void TC009_checkAddtoCartBtn() throws InterruptedException
+	{
+		telepage = new TelevisionPage(driver);
+		
+		test = report.startTest("TC008: Verify Add to cart button");
+		
+		checkPopUp();
+			
+		Thread.sleep(5000);
+		telepage.searchProduct("apple ipad");
+		telepage.clickOnSearch();
+		List<WebElement> ipads = telepage.listIpads();
+		
+		ipads.get(0).click();
+		
+		Thread.sleep(5000);
+		
+		ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
+		
+		driver.switchTo().window(newTb.get(1));
+		
+		if(telepage.addtocartbtn.isDisplayed())
+		{
+			test.log(LogStatus.PASS, "Add to cart button is displayed");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Add to cart button is not displayed");
+		}
+	}
 }
