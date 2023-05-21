@@ -78,11 +78,12 @@ public class TestBase {
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			System.out.println(System.getProperty("user.dir"));
-		    System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
+		   // System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		    //driver = new ChromeDriver();
 		   ChromeOptions options = new ChromeOptions();
 		    options.addArguments("--remote-allow-origins=*");
 		    driver = new ChromeDriver(options);
+		    options.addArguments("--headless");
 		    driver.manage().window().maximize();
 		    driver.manage().timeouts().implicitlyWait(java.time.Duration.ofMillis(1000));
 		    System.out.println("i am in TestBase");
