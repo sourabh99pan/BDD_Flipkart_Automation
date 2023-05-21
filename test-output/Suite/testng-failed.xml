@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Listeners.TestStatusListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="ipad"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestClasses.Webtable">
+        <methods>
+          <include name="startTest"/>
+          <include name="TC012"/>
+          <include name="initializeTest"/>
+          <include name="end_Test"/>
+          <include name="endTest"/>
+        </methods>
+      </class> <!-- TestClasses.Webtable -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
