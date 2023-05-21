@@ -33,6 +33,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class TestBase {
 	
@@ -78,8 +80,9 @@ public class TestBase {
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			System.out.println(System.getProperty("user.dir"));
-		   // System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
+		   //x System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		    //driver = new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
 		   ChromeOptions options = new ChromeOptions();
 		    options.addArguments("--remote-allow-origins=*");
 		    driver = new ChromeDriver(options);
