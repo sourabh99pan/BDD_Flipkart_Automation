@@ -20,7 +20,7 @@ import Base.TestBase;
 
 public class Webtable extends TestBase{
 	
-	@Test(enabled=false)
+	@Test
 	public void TC009_webtableBasic()
 	{
 		test = report.startTest("TC009: Verify web table basic");
@@ -142,7 +142,7 @@ public class Webtable extends TestBase{
 		}
 	}
 	
-	@Test(groups= {"ipad"})
+	@Test
 	public void TC012() throws IOException, ParseException
 	{
 		JSONReadWrite.readWrite();

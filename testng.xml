@@ -7,7 +7,7 @@
  <test name="Test" preserve-order="true">
 	 <groups>
 	  <run>
-	  	<include name="ipad"/>
+	  	<include name="ipad2"/>
 	  </run>
 	</groups>
    <classes>

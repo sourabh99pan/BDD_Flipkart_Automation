@@ -7,17 +7,14 @@
   <test thread-count="5" name="Test(failed)">
     <groups>
       <run>
-        <include name="ipad"/>
+        <include name="ipad2"/>
       </run>
     </groups>
     <classes>
       <class name="TestClasses.Webtable">
         <methods>
-          <include name="startTest"/>
-          <include name="TC012"/>
-          <include name="initializeTest"/>
-          <include name="end_Test"/>
-          <include name="endTest"/>
+          <include name="TC010_checkValues"/>
+          <include name="TC011_selectOneCheckBox"/>
         </methods>
       </class> <!-- TestClasses.Webtable -->
     </classes>

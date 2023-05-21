@@ -14,6 +14,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -78,7 +79,10 @@ public class TestBase {
 		{
 			System.out.println(System.getProperty("user.dir"));
 		    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-		    driver = new ChromeDriver();
+		    //driver = new ChromeDriver();
+		   ChromeOptions options = new ChromeOptions();
+		    options.addArguments("--remote-allow-origins=*");
+		    driver = new ChromeDriver(options);
 		    driver.manage().window().maximize();
 		    driver.manage().timeouts().implicitlyWait(java.time.Duration.ofMillis(1000));
 		    System.out.println("i am in TestBase");
@@ -104,7 +108,7 @@ public class TestBase {
 		System.out.println("In Before Test");
 		report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
 
-		//test = report.startTest(testContext.getName());
+		test = report.startTest(testContext.getName());
 	}
 	
 	@AfterTest(groups= {"smoke","regression","ipad"})
